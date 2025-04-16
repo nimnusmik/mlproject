@@ -193,8 +193,9 @@ logs/
 
 # Mac
 .DS_Store
-=======
-.DS_Store
+
+# Python Virtual Environment
 venv/
+
+# Bytecode files
 *.pyc
->>>>>>> 074ead9f61aac1bb5f00d581745ff68e262f55f7

@@ -173,6 +173,7 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
+<<<<<<< HEAD
 # Python
 __pycache__/
 *.pyc
@@ -192,3 +193,8 @@ logs/
 
 # Mac
 .DS_Store
+=======
+.DS_Store
+venv/
+*.pyc
+>>>>>>> 074ead9f61aac1bb5f00d581745ff68e262f55f7

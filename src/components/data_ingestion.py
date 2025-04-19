@@ -7,6 +7,9 @@ from sklearn.model_selection import train_test_split
 from dataclasses import dataclass 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
 
+from src.components.data_transformation import DataTransformation
+from src.components.model_trainer import ModelTrainer
+
 @dataclass 
 class DataIngestionConfig:
     # all output will be stored in artifacts
@@ -49,4 +52,13 @@ class DataIngestion:
 
 if __name__ == "__main__":
     obj = DataIngestion()
-    obj.initiate_data_ingestion()
+    train_data, test_data, raw_data = obj.initiate_data_ingestion()
+
+    data_transformation = DataTransformation()
+    train_arr, test_arr,raw_data = data_transformation.initiate_data_transformation(train_data,test_data)
+
+
+    modeltrainer = ModelTrainer()
+    print(modeltrainer.initiate_model_trainer(train_arr, test_arr,preprocessor_path=raw_data))
+    # print(modeltrainer.initiate_model_trainer(train_arr, test_arr,preprocessor_path=raw_data))
+ 
